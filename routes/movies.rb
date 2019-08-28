@@ -10,7 +10,7 @@ class MoviesApi < Sinatra::Application
     days = params[:days]
     filename = params[:cover][:filename]
     file = params[:cover][:tempfile]
-    File.open("./public/covers/#{filename}", 'wb') do |f|
+    File.open("./tmp/covers/#{filename}", 'wb') do |f|
       f.write(file.read)
     end
 
