@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 gem 'pg', group: 'production'
+gem 'rake'
 gem 'sequel'
 gem 'sinatra'
 gem 'sqlite3', group: 'development'
