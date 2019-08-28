@@ -1,7 +1,6 @@
 require 'sinatra'
 require 'sequel'
 require 'sinatra/contrib'
-require 'sinatra/namespace'
 
 DB = Sequel.postgres('test', user: 'antonio', password: 'admin', host: 'localhost')
 
