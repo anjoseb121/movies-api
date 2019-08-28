@@ -2,8 +2,11 @@ require 'sinatra'
 require 'sequel'
 require 'sinatra/contrib'
 
-DB = Sequel.connect(ENV['DATABASE_URL'])
-#DB = Sequel.postgres('test', user: 'antonio', password: 'admin', host: 'localhost')
+DB = if Sinatra::Base.production?
+       Sequel.connect(ENV['DATABASE_URL'])
+     else
+       Sequel.postgres('test', user: 'antonio', password: 'admin', host: 'localhost')
+     end
 
 %w[models routes].each { |dir| Dir.glob("./#{dir}/*.rb", &method(:require)) }
 

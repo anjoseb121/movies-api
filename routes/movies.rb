@@ -17,6 +17,6 @@ class MoviesApi < Sinatra::Application
     json Movie.insert(name: name,
                       description: description,
                       days: days,
-                      cover_url: 'http://localhost:4567/public/covers/' + filename)
+                      cover_url: "http://#{request.host_with_port}/tmp/" + filename)
   end
 end
