@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-gem 'pg', :group => 'production'
+gem 'pg', group: 'production'
 gem 'sequel'
 gem 'sinatra'
-gem 'sqlite3', :group => 'development'
+gem 'sqlite3', group: 'development'
