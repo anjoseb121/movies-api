@@ -4,12 +4,13 @@ Heroku URL: https://movies-api-rb.herokuapp.com/
 
 ## Running locally
 
-1. Clone this repository `git clone repourl`
+1. Clone this repository `git clone https://github.com/anjoseb121/movies-api.git`
 2. Run postgres locally
 3. Update your local database credentials in `app.rb` file
-4. Run migrations with `bundle exec sequel -m db/migrations postgres://localhost/#{your database name}`
-5. Run the project with `ruby app.rb`
-
+4. Install gems with `bundle install`
+5. Run migrations with `bundle exec sequel -m db/migrations postgres://localhost/#{your database name}`
+6. Run the project with `ruby app.rb`
+7. Test your API!
 
 ## Run tests
 Execute `rspec` in root directory
