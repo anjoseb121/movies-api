@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'dry-transaction'
 gem 'pg', group: 'production'
 gem 'rake'
 gem 'sequel'

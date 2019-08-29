@@ -5,18 +5,11 @@ class MoviesApi < Sinatra::Application
   end
 
   post '/movies' do
-    name = params[:name]
-    description = params[:description]
-    days = params[:days]
-    filename = params[:cover][:filename]
-    file = params[:cover][:tempfile]
-    File.open("/tmp/#{filename}", 'wb') do |f|
-      f.write(file.read)
+    result = CreateMovie.new.call(params)
+    if result.success?
+      json result.value_or(0)
+    else
+      json result.value_or(error: 'Error')
     end
-
-    json Movie.insert(name: name,
-                      description: description,
-                      days: days,
-                      cover_url: "http://#{request.host_with_port}/tmp/" + filename)
   end
 end
