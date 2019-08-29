@@ -1,6 +1,6 @@
 # Movies API
 
-Heroku URL: 
+Heroku URL: https://movies-api-rb.herokuapp.com/
 
 ## Running locally
 
@@ -19,7 +19,7 @@ Execute `rspec` in root directory
 
 ## Create a movie `/movies`
 ```
-URL: herokuurl.com/movies
+URL: movies-api-rb.herokuapp.com/movies
 TYPE: POST
 PARAMS: 
     {
@@ -36,17 +36,17 @@ RESPONSE:
 ## Get all movies `/movies`
 
 ```
-URL: herokuurl.com/movies
+URL: movies-api-rb.herokuapp.com/movies
 TYPE: GET
 PARAMS:
   day: integer
 
-Example: herokuurl.com/movies?day=2
+Example: movies-api-rb.herokuapp.com/movies?day=2
 ```
 
 ## Create Booking `/bookings`
 ```
-URL: herokuurl.com/bookings
+URL: movies-api-rb.herokuapp.com/bookings
 TYPE: POST
 PARAMS: 
     {
@@ -61,11 +61,11 @@ RESPONSE:
 ## Get bookings between dates `/bookings`
 
 ```
-URL: herokuurl.com/bookings
+URL: movies-api-rb.herokuapp.com/bookings
 TYPE: GET
 PARAMS:
   start_date: string
   end_date: string
   
-Example: herokuurl.com/bookings?start_date=2019-08-30&end_date=2019-08-30
+Example: movies-api-rb.herokuapp.com/bookings?start_date=2019-08-30&end_date=2019-08-30
 ```

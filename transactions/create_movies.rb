@@ -32,7 +32,7 @@ class CreateMovie
     id = Movie.insert(name: name,
                       description: description,
                       days: days,
-                      cover_url: 'http://movies-api.com/tmp/' + cover_name)
+                      cover_url: 'http://movies-api-rb.herokuapp.com/tmp/' + cover_name)
     Success(id: id)
   end
 end
