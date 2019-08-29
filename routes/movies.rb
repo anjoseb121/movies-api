@@ -9,7 +9,7 @@ class MoviesApi < Sinatra::Application
     if result.success?
       json result.value_or(0)
     else
-      json result.value_or(error: 'Error')
+      json result.failure
     end
   end
 end

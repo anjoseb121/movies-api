@@ -6,16 +6,11 @@ class MoviesApi < Sinatra::Application
   end
 
   post '/bookings' do
-    date = params[:date]
-    movie_id = params[:movie_id]
-    day_of_week = Date.parse(date).strftime('%u')
-    is_able_day = Movie.where(Sequel[{ id: movie_id }] & Sequel.like(:days, "%#{day_of_week}%")).first
-    available = Booking.where(date: date, movie_id: movie_id).count < 10
-    if available && is_able_day
-      Booking.insert(date: date, movie_id: movie_id)
-      json response: 'created'
+    result = CreateBooking.new.call(params)
+    if result.success?
+      json result.value_or(0)
     else
-      json error: 'unavailable day'
+      json result.failure
     end
   end
 end
