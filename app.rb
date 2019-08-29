@@ -4,6 +4,8 @@ require 'sinatra/contrib'
 
 DB = if Sinatra::Base.production?
        Sequel.connect(ENV['DATABASE_URL'])
+     elsif Sinatra::Base.test?
+       Sequel.postgres('test', user: 'antonio', password: 'admin', host: 'localhost')
      else
        Sequel.postgres('test', user: 'antonio', password: 'admin', host: 'localhost')
      end
